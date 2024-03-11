@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cah68dx6i0c6d"]
+
+[ext_resource type="Texture2D" uid="uid://1l60n6bq16cg" path="res://Assets/Sunny-land-files/Graphical Assets/environment/Props/bush.png" id="1_278k2"]
+[ext_resource type="Script" path="res://Scripts/Bush.gd" id="1_wm5l6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u3npc"]
+radius = 13.0
+height = 44.0
+
+[node name="Bush" type="Area2D"]
+script = ExtResource("1_wm5l6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_278k2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_u3npc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

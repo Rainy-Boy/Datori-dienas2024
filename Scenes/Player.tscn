@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://bdbb603tucys7"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_5udcj"]
+[ext_resource type="Texture2D" uid="uid://c7l76yj5ty0w4" path="res://icon.svg" id="1_hbf3t"]
+[ext_resource type="Texture2D" uid="uid://dmtb6h81crwfo" path="res://Assets/Sunny-land-files/Graphical Assets/sprites/player/run/player-run-1.png" id="2_wmn0c"]
+[ext_resource type="Texture2D" uid="uid://dl7t7iadd0lkd" path="res://Assets/Sunny-land-files/Graphical Assets/sprites/player/run/player-run-2.png" id="3_2rgvs"]
+[ext_resource type="Texture2D" uid="uid://b3sc7xjq35htn" path="res://Assets/Sunny-land-files/Graphical Assets/sprites/player/run/player-run-3.png" id="4_tkekd"]
+[ext_resource type="Texture2D" uid="uid://cwintyoxj6mb2" path="res://Assets/Sunny-land-files/Graphical Assets/sprites/player/run/player-run-4.png" id="5_usgrw"]
+[ext_resource type="Texture2D" uid="uid://bua5ovnb4cu5" path="res://Assets/Sunny-land-files/Graphical Assets/sprites/player/run/player-run-5.png" id="6_arkjw"]
+[ext_resource type="Texture2D" uid="uid://6e4rvbdp4bfy" path="res://Assets/Sunny-land-files/Graphical Assets/sprites/player/run/player-run-6.png" id="7_u0447"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dmbgw"]
+radius = 8.0
+height = 26.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2uo4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wmn0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2rgvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tkekd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_usgrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_arkjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u0447")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_5udcj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_dmbgw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_o2uo4")
+animation = &"Run"
+autoplay = "Run"
+metadata/_edit_lock_ = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.320312, 0.28125)
+texture = ExtResource("1_hbf3t")
