@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgp4yar7r5bep"]
+
+[ext_resource type="Texture2D" uid="uid://dge6tdqm210ia" path="res://Assets/trukshans.png" id="1_j6bhv"]
+[ext_resource type="Script" path="res://Scripts/Truksans.gd" id="1_rqrac"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6brgy"]
+radius = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_avsgs"]
+radius = 24.0
+height = 48.0
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(0, -35)
+script = ExtResource("1_rqrac")
+
+[node name="Trukshans" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, -19.3461)
+scale = Vector2(0.132813, 0.135367)
+texture = ExtResource("1_j6bhv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11, -30.3461)
+shape = SubResource("CircleShape2D_6brgy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(11, -7.34615)
+shape = SubResource("CapsuleShape2D_avsgs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3tkrepgsro05"]
+[gd_scene load_steps=12 format=3 uid="uid://3tkrepgsro05"]
 
 [ext_resource type="Texture2D" uid="uid://drtwo2oxjlo7g" path="res://Assets/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_hha4f"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_lhei2"]
@@ -7,7 +7,8 @@
 [ext_resource type="Script" path="res://Scripts/Obstacles.gd" id="5_1hf3a"]
 [ext_resource type="PackedScene" uid="uid://ckttlre4kst41" path="res://Scenes/click_menu.tscn" id="5_7kdtu"]
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="7_xn2m4"]
-[ext_resource type="PackedScene" path="res://Scenes/end_screen.tscn" id="8_kist3"]
+[ext_resource type="Script" path="res://Scripts/end_screen.gd" id="8_e2onh"]
+[ext_resource type="Texture2D" uid="uid://bk4xv6hqenshg" path="res://Assets/end_message.png" id="9_6tsgc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qnwtm"]
 texture = ExtResource("1_hha4f")
@@ -428,22 +429,46 @@ autostart = true
 [node name="Ui" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="Ui"]
-offset_left = 62.0
-offset_top = 12.0
-offset_right = 93.0
-offset_bottom = 41.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 32.0
+offset_bottom = 31.0
 
 [node name="Score" type="Label" parent="Ui"]
-offset_left = 73.0
-offset_top = 15.0
-offset_right = 92.0
-offset_bottom = 38.0
+offset_left = 12.0
+offset_top = 5.0
+offset_right = 31.0
+offset_bottom = 28.0
 text = "0"
 script = ExtResource("7_xn2m4")
-metadata/_edit_lock_ = true
 
-[node name="EndScreen" parent="." instance=ExtResource("8_kist3")]
+[node name="EndScreen" type="Node2D" parent="."]
+process_mode = 2
 visible = false
-position = Vector2(88, 108)
+position = Vector2(91, 69)
+script = ExtResource("8_e2onh")
+
+[node name="EndMessage" type="Sprite2D" parent="EndScreen"]
+position = Vector2(-7, 0)
+scale = Vector2(0.0660104, 0.0660104)
+texture = ExtResource("9_6tsgc")
+
+[node name="ButtonQuit" type="Button" parent="EndScreen"]
+offset_left = -56.0
+offset_top = 189.0
+offset_right = 33.0
+offset_bottom = 217.0
+theme_override_font_sizes/font_size = 12
+text = "Pamest spēli"
+
+[node name="ButtonPlayAgain" type="Button" parent="EndScreen"]
+offset_left = -56.0
+offset_top = 157.0
+offset_right = 33.0
+offset_bottom = 185.0
+theme_override_font_sizes/font_size = 12
+text = "Spēlēt vēlreiz"
 
 [connection signal="timeout" from="Obstacles/Timer" to="Obstacles" method="_on_timer_timeout"]
+[connection signal="pressed" from="EndScreen/ButtonQuit" to="EndScreen" method="_on_button_pressed"]
+[connection signal="pressed" from="EndScreen/ButtonPlayAgain" to="EndScreen" method="_on_button_play_again_pressed"]
