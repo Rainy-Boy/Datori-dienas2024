@@ -6,9 +6,7 @@ extends Node2D
 
 var obstaclesDict = {
 	1 : [
-		"res://Scenes/Bush.tscn",
-		"res://Scenes/Bush.tscn",
-		"res://Scenes/Bush.tscn"
+		"res://Scenes/Sejiens.tscn"
 	],
 	2 : ["res://Scenes/Bush.tscn"],
 	3 : [],

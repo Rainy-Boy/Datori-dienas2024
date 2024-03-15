@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckttlre4kst41"]
 
-[ext_resource type="Script" path="res://Scripts/click_menu.gd" id="1_die6f"]
+[ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_iqiyc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jv3gl"]
 size = Vector2(182, 310)
 
 [node name="StartMenu" type="Area2D"]
 process_mode = 2
-script = ExtResource("1_die6f")
+script = ExtResource("1_iqiyc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(81, 145)
@@ -21,8 +21,8 @@ offset_bottom = 153.0
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 26.0
+offset_left = 5.0
 offset_top = 23.0
-offset_right = 122.0
+offset_right = 144.0
 offset_bottom = 46.0
-text = "Click to play"
+text = "Nospied, lai sāktu"

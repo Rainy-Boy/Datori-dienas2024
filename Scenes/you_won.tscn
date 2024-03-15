@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dua3ryt6458yh"]
+
+[node name="YouWon" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 14.0
+offset_top = 25.0
+offset_right = 141.0
+offset_bottom = 76.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 126.0
+offset_bottom = 50.0

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://j4hhjd228aqc"]
+
+[ext_resource type="Script" path="res://Scripts/Sejiens.gd" id="1_gq5dr"]
+[ext_resource type="Texture2D" uid="uid://bwso3tfvixgcn" path="res://Assets/Sejiens/pie_ugunskura.png" id="1_nv0pp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tg7h3"]
+size = Vector2(45, 33)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_gq5dr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5625, -4.5625)
+shape = SubResource("RectangleShape2D_tg7h3")
+
+[node name="PieUgunskura" type="Sprite2D" parent="."]
+position = Vector2(-2.0625, -13.0625)
+scale = Vector2(0.093875, 0.093875)
+texture = ExtResource("1_nv0pp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
