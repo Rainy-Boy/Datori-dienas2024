@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv6wgetrbjaci"]
+
+[ext_resource type="Script" path="res://Scripts/person.gd" id="1_kl57a"]
+[ext_resource type="Texture2D" uid="uid://bn0bn17quw7fo" path="res://Assets/Aristotelis/person.png" id="1_pie2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ph3pf"]
+size = Vector2(11.75, 28.125)
+
+[node name="person" type="Area2D"]
+position = Vector2(5, 10)
+script = ExtResource("1_kl57a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12.125, -1.9375)
+shape = SubResource("RectangleShape2D_ph3pf")
+
+[node name="Person" type="Sprite2D" parent="."]
+position = Vector2(13, -10)
+scale = Vector2(0.0233333, 0.0210833)
+texture = ExtResource("1_pie2h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

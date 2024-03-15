@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/Obstacles.gd" id="5_1hf3a"]
 [ext_resource type="PackedScene" uid="uid://ckttlre4kst41" path="res://Scenes/click_menu.tscn" id="5_7kdtu"]
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="7_xn2m4"]
-[ext_resource type="PackedScene" uid="uid://bgcxl2pegdc6q" path="res://Scenes/end_screen.tscn" id="8_kist3"]
+[ext_resource type="PackedScene" path="res://Scenes/end_screen.tscn" id="8_kist3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qnwtm"]
 texture = ExtResource("1_hha4f")

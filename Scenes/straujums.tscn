@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2vil333wks32"]
+
+[ext_resource type="Script" path="res://Scripts/straujums.gd" id="1_kpwee"]
+[ext_resource type="Texture2D" uid="uid://uo245rwgvfir" path="res://Assets/straujums.png" id="1_wm371"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_caeru"]
+size = Vector2(46, 40)
+
+[node name="straujums" type="Area2D"]
+script = ExtResource("1_kpwee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34.75, -8.25001)
+shape = SubResource("RectangleShape2D_caeru")
+
+[node name="Straujums" type="Sprite2D" parent="."]
+position = Vector2(36.75, -17.25)
+scale = Vector2(0.0251667, 0.0251667)
+texture = ExtResource("1_wm371")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

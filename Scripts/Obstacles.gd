@@ -6,7 +6,13 @@ extends Node2D
 
 var obstaclesDict = {
 	1 : [
-		"res://Scenes/Sejiens.tscn"
+		#"res://Scenes/Sejiens.tscn",
+		#"res://Scenes/kina.tscn",
+		#"res://Scenes/road_block.tscn", 
+		#"res://Scenes/person.tscn",
+		#"res://Scenes/df_flag.tscn",
+		"res://Scenes/smotrovs.tscn",
+		"res://Scenes/straujums.tscn"
 	],
 	2 : ["res://Scenes/Bush.tscn"],
 	3 : [],
@@ -26,7 +32,8 @@ func _on_timer_timeout():
 			add_child(obstacleInstance)
 			
 			$Timer.wait_time = rng.randi_range(1, 4)
-			index += rng.randi_range(1, 2)
+			#index += rng.randi_range(1, 2)
+			index += 1
 		else:
 			print_debug("Beidzās ", semestris, ". semestris")
 			semestris += 1
