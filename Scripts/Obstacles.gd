@@ -1,14 +1,37 @@
 extends Node2D
 
-var Bush = preload("res://Scenes/Bush.tscn")
+#var obstaclesArray: Array[String] = [
+	#"res://Scenes/Bush.tscn"
+#]
+
+var obstaclesDict = {
+	1 : [
+		"res://Scenes/Bush.tscn",
+		"res://Scenes/Bush.tscn",
+		"res://Scenes/Bush.tscn"
+	],
+	2 : ["res://Scenes/Bush.tscn"],
+	3 : [],
+	4 : []
+}
+var semestris = 1
+var index = 0
+var rng = RandomNumberGenerator.new()
 
 func _on_timer_timeout():
-	var tempBush = Bush.instantiate()
-	tempBush.position = Vector2(181, 194)
-	
-	add_child(tempBush)
-
-	var rng = RandomNumberGenerator.new()
-	var randint = rng.randi_range(1, 4)
-	
-	$Timer.wait_time = randint
+	if obstaclesDict.has(semestris):
+		if index < obstaclesDict[semestris].size():
+			var obstacleData = load(obstaclesDict[semestris][index])
+			var obstacleInstance = obstacleData.instantiate()
+			obstacleInstance.position = Vector2(181, 194)
+			
+			add_child(obstacleInstance)
+			
+			$Timer.wait_time = rng.randi_range(1, 4)
+			index += rng.randi_range(1, 2)
+		else:
+			print_debug("Beidzās ", semestris, ". semestris")
+			semestris += 1
+			index = 0
+	else:
+		print_debug("Beidzās asseti")
