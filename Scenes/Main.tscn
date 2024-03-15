@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://3tkrepgsro05"]
+[gd_scene load_steps=11 format=3 uid="uid://3tkrepgsro05"]
 
 [ext_resource type="Texture2D" uid="uid://drtwo2oxjlo7g" path="res://Assets/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_hha4f"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_lhei2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/Obstacles.gd" id="5_1hf3a"]
 [ext_resource type="PackedScene" uid="uid://ckttlre4kst41" path="res://Scenes/click_menu.tscn" id="5_7kdtu"]
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="7_xn2m4"]
+[ext_resource type="PackedScene" uid="uid://bgcxl2pegdc6q" path="res://Scenes/end_screen.tscn" id="8_kist3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qnwtm"]
 texture = ExtResource("1_hha4f")
@@ -433,5 +434,9 @@ offset_bottom = 38.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0"
 script = ExtResource("7_xn2m4")
+
+[node name="EndScreen" parent="." instance=ExtResource("8_kist3")]
+visible = false
+position = Vector2(88, 108)
 
 [connection signal="timeout" from="Obstacles/Timer" to="Obstacles" method="_on_timer_timeout"]

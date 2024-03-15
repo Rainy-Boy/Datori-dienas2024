@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgcxl2pegdc6q"]
+
+[ext_resource type="Script" path="res://Scripts/end_screen.gd" id="1_o2rr5"]
+[ext_resource type="Texture2D" uid="uid://bk4xv6hqenshg" path="res://Assets/end_message.png" id="1_yn2g7"]
+
+[node name="EndScreen" type="Node2D"]
+process_mode = 2
+script = ExtResource("1_o2rr5")
+
+[node name="EndMessage" type="Sprite2D" parent="."]
+scale = Vector2(0.0713542, 0.0713542)
+texture = ExtResource("1_yn2g7")
+
+[node name="ButtonQuit" type="Button" parent="."]
+offset_left = -48.0
+offset_top = 151.0
+offset_right = 41.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 12
+text = "Pamest spēli"
+
+[node name="ButtonPlayAgain" type="Button" parent="."]
+offset_left = -48.0
+offset_top = 119.0
+offset_right = 41.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 12
+text = "Spēlēt vēlreiz"
+
+[connection signal="pressed" from="ButtonQuit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ButtonPlayAgain" to="." method="_on_button_play_again_pressed"]

@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jv3gl"]
 size = Vector2(182, 310)
 
-[node name="PauseMenu" type="Area2D"]
+[node name="StartMenu" type="Area2D"]
 process_mode = 2
 script = ExtResource("1_die6f")
 

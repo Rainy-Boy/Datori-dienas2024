@@ -1,8 +1,10 @@
 extends Area2D
 
+const SPEED = 150
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	self.position.x -= 150 * delta
+	self.position.x -= SPEED * delta
 	
 	if self.position.x < -10:
 		if Game.playerAlive:
@@ -15,3 +17,5 @@ func _on_body_entered(body):
 		print("You lost!")
 		body.queue_free()
 		Game.playerAlive = false
+		
+		get_tree().paused = true

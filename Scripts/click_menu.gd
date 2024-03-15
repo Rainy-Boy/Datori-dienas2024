@@ -7,4 +7,5 @@ func _input(event):
 		get_tree().paused = false
 
 		self.visible = false
+		self.process_mode = Node.PROCESS_MODE_DISABLED
 	
