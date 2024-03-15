@@ -6,13 +6,13 @@ extends Node2D
 
 var obstaclesDict = {
 	1 : [
-		#"res://Scenes/Sejiens.tscn",
-		#"res://Scenes/kina.tscn",
-		#"res://Scenes/road_block.tscn", 
-		#"res://Scenes/person.tscn",
-		#"res://Scenes/df_flag.tscn",
-		#"res://Scenes/smotrovs.tscn",
-		#"res://Scenes/straujums.tscn",
+		"res://Scenes/Sejiens.tscn",
+		"res://Scenes/kina.tscn",
+		"res://Scenes/road_block.tscn", 
+		"res://Scenes/person.tscn",
+		"res://Scenes/df_flag.tscn",
+		"res://Scenes/smotrovs.tscn",
+		"res://Scenes/straujums.tscn",
 		"res://Scenes/Truksans.tscn"
 	]
 }
