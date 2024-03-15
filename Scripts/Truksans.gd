@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED = 300
+const SPEED = 250
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	self.position.x -= SPEED * delta

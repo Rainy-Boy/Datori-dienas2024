@@ -10,7 +10,7 @@ radius = 24.0
 radius = 24.0
 height = 48.0
 
-[node name="Area2D" type="Area2D"]
+[node name="Trukshans" type="Area2D"]
 position = Vector2(0, -35)
 script = ExtResource("1_rqrac")
 

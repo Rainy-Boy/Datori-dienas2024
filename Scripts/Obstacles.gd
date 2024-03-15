@@ -6,18 +6,15 @@ extends Node2D
 
 var obstaclesDict = {
 	1 : [
-		"res://Scenes/Sejiens.tscn",
-		"res://Scenes/kina.tscn",
-		"res://Scenes/road_block.tscn", 
-		"res://Scenes/person.tscn",
-		"res://Scenes/df_flag.tscn",
-		"res://Scenes/smotrovs.tscn",
-		"res://Scenes/straujums.tscn",
+		#"res://Scenes/Sejiens.tscn",
+		#"res://Scenes/kina.tscn",
+		#"res://Scenes/road_block.tscn", 
+		#"res://Scenes/person.tscn",
+		#"res://Scenes/df_flag.tscn",
+		#"res://Scenes/smotrovs.tscn",
+		#"res://Scenes/straujums.tscn",
 		"res://Scenes/Truksans.tscn"
-	],
-	2 : ["res://Scenes/Bush.tscn"],
-	3 : [],
-	4 : []
+	]
 }
 var semestris = 1
 var index = 0
@@ -32,7 +29,7 @@ func _on_timer_timeout():
 			
 			add_child(obstacleInstance)
 			
-			$Timer.wait_time = rng.randi_range(1, 4)
+			$Timer.wait_time = rng.randi_range(2, 4)
 			#index += rng.randi_range(1, 2)
 			index += 1
 		else:
@@ -40,4 +37,4 @@ func _on_timer_timeout():
 			semestris += 1
 			index = 0
 	else:
-		print_debug("Beidzās asseti")
+		get_tree().change_scene_to_file("res://Scenes/you_won.tscn")

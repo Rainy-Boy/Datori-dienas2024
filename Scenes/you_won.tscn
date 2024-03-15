@@ -1,14 +1,56 @@
-[gd_scene format=3 uid="uid://dua3ryt6458yh"]
+[gd_scene load_steps=3 format=3 uid="uid://dua3ryt6458yh"]
+
+[ext_resource type="Script" path="res://Scripts/you_won.gd" id="1_7dk30"]
+[ext_resource type="Texture2D" uid="uid://bvomleq0wrnbi" path="res://Assets/RB19.jpg" id="2_wx86d"]
 
 [node name="YouWon" type="Node2D"]
+script = ExtResource("1_7dk30")
+
+[node name="Rb19" type="Sprite2D" parent="."]
+position = Vector2(71, 141)
+scale = Vector2(0.296, 0.296)
+texture = ExtResource("2_wx86d")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 14.0
-offset_top = 25.0
-offset_right = 141.0
-offset_bottom = 76.0
+offset_left = 1.0
+offset_right = 169.0
+offset_bottom = 290.0
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_right = 126.0
-offset_bottom = 50.0
+offset_right = 162.0
+offset_bottom = 90.0
+text = "Veiksmīgi pārvarēts
+ 1. semestris"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 90.0
+offset_right = 172.0
+offset_bottom = 140.0
+text = "Paldies par 
+spēlēšanu!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 167.0
+offset_right = 140.0
+offset_bottom = 201.0
+text = "Spēlēt vēlreiz"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 211.0
+offset_right = 142.0
+offset_bottom = 245.0
+text = "Beigt spēli"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
